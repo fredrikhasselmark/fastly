@@ -6,6 +6,7 @@ description = ""
 language = "javascript"
 manifest_version = 3
 name = "Use microservices to divide up a domain"
+service_id = "a9MdrvJ2ai3pZb8AS9lIi5"
 
 [scripts]
 build = "npm run build"
