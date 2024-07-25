@@ -2,11 +2,25 @@
 # https://developer.fastly.com/reference/fastly-toml/
 
 authors = ["<oss@fastly.com>"]
-description = "An empty application template for the Fastly Compute environment which returns a 200 OK response."
+description = ""
 language = "javascript"
 manifest_version = 3
-name = "Empty starter for JavaScript"
+name = "Use microservices to divide up a domain"
 
 [scripts]
 build = "npm run build"
 post_init = "npm install"
+
+[local_server.backends.origin_0]
+      url = "https://httpbin.org"
+
+[local_server.backends.origin_1]
+      url = "https://example.com"
+
+[setup.backends.origin_0]
+address = "httpbin.org"
+port = 443
+
+[setup.backends.origin_1]
+address = "example.com"
+port = 443
